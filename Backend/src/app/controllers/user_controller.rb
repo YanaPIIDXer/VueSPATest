@@ -10,4 +10,15 @@ class UserController < ApplicationController
 
     render json: { result: true, message: "Register success." }
   end
+
+  def login
+    name = params[:name]
+    password = params[:password]
+    user = User.find_by(name: name)
+    if user == nil then
+      render json: { result: false, message: "Login failed." }
+      return
+    end
+    render json: { result: true, message: "Login success." }
+  end
 end
