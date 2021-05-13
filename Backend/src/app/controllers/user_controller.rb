@@ -27,4 +27,9 @@ class UserController < ApplicationController
   def check
     render json: { is_login: session[:name] != nil }
   end
+
+  def logout
+    session[:name] = nil
+    render json: { message: "Logout success." }
+  end
 end
