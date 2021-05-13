@@ -1,6 +1,6 @@
 <template>
   <div class="bar">
-    <div v-if="isLogin">
+    <div v-if="is_login">
       <div>ログアウト</div>
     </div>
     <div v-else>
@@ -16,16 +16,20 @@ export default {
   name: "Header",
   data: function () {
     return {
-      isLogin: this.check_login(),
+      is_login: false,
     };
+  },
+  mounted: function () {
+    this.check_login();
   },
   methods: {
     check_login: function () {
-      var result = false;
-      axios.get("http://localhost:3000/user/check").then(function (response) {
-        result = response.data.is_login;
-      });
-      return result;
+      axios
+        .get("http://localhost:3000/user/check", { withCredentials: true })
+        .then(this.onResponse);
+    },
+    onResponse: function (response) {
+      this.is_login = response.data.is_login;
     },
   },
 };
