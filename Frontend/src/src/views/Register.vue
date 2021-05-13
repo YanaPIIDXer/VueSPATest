@@ -30,7 +30,10 @@ export default {
           name: this.name,
           password: this.password,
         })
-        .then(this.onResponse);
+        .then(this.onResponse)
+        .catch(function () {
+          alert("登録に失敗しました。");
+        });
     },
     onResponse: function (response) {
       if (!response.data.result) {
