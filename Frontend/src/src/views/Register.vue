@@ -1,5 +1,6 @@
 <template>
   <div class="register_form">
+    <h1>新規登録</h1>
     <form>
       ユーザＩＤ：<input type="text" name="id" /><br />
       パスワード：<input type="password" name="password" /><br />
