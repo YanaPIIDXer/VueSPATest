@@ -30,13 +30,15 @@ export default {
           name: this.name,
           password: this.password,
         })
-        .then(function (response) {
-          if (!response.data.result) {
-            alert("登録に失敗しました。");
-            return;
-          }
-          alert("登録しました。");
-        });
+        .then(this.onResponse);
+    },
+    onResponse: function (response) {
+      if (!response.data.result) {
+        alert("登録に失敗しました。");
+        return;
+      }
+      this.$router.push("/login");
+      alert("登録しました。");
     },
   },
 };
