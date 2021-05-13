@@ -2,7 +2,7 @@
   <div class="login_form">
     <h1>ログイン</h1>
     <form>
-      ユーザＩＤ：<input type="text" name="id" /><br />
+      ユーザ名：<input type="text" name="name" /><br />
       パスワード：<input type="password" name="password" /><br />
       <input type="submit" value="ログイン" />
     </form>
