@@ -11,12 +11,22 @@
 </template>
 
 <script>
+const axios = require("axios").create();
 export default {
   name: "Header",
   data: function () {
     return {
-      isLogin: false,
+      isLogin: this.check_login(),
     };
+  },
+  methods: {
+    check_login: function () {
+      var result = false;
+      axios.get("http://localhost:3000/user/check").then(function (response) {
+        result = response.data.is_login;
+      });
+      return result;
+    },
   },
 };
 </script>
