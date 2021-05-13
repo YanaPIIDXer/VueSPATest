@@ -1,7 +1,7 @@
 <template>
   <div class="bar">
     <div v-if="is_login">
-      <div><router-link to="/logout">ログアウト</router-link>></div>
+      <div><router-link to="/prelogout">ログアウト</router-link>></div>
     </div>
     <div v-else>
       <div><router-link to="/register">新規登録</router-link></div>

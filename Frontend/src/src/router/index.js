@@ -21,6 +21,11 @@ const routes = [
     component: () => import('../views/Login.vue')
   },
   {
+    path: '/prelogout',
+    name: 'PreLogout',
+    component: () => import('../views/PreLogout.vue')
+  },
+  {
     path: '/logout',
     name: 'Logout',
     component: () => import('../views/Logout.vue')
