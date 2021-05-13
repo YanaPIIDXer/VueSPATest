@@ -40,7 +40,7 @@ export default {
         alert("ログインに失敗しました。");
         return;
       }
-      alert("ログインしました");
+      window.location = "/";
     },
   },
 };
