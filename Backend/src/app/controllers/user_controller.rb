@@ -23,4 +23,8 @@ class UserController < ApplicationController
     session[:name] = name
     render json: { result: true, message: "Login success." }
   end
+
+  def check
+    render json: { is_login: session[:name] != nil }
+  end
 end
