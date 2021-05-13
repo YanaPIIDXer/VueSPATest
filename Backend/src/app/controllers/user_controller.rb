@@ -19,6 +19,8 @@ class UserController < ApplicationController
       render json: { result: false, message: "Login failed." }
       return
     end
+
+    session[:name] = name
     render json: { result: true, message: "Login success." }
   end
 end
