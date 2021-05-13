@@ -4,7 +4,7 @@
       <div>ログアウト</div>
     </div>
     <div v-else>
-      <div>新規登録</div>
+      <router-link to="/register">新規登録</router-link>
       <div>ログイン</div>
     </div>
   </div>
